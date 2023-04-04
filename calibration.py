@@ -19,7 +19,7 @@ import dataset as dm
 
 log10 = np.log10
 clin = -0.6
-numbr = 500
+numbr = 1000
 AM_sigma_minimum = float('inf')
 site_out = []
 area = []
@@ -141,7 +141,7 @@ dfu_resample = df_samp1['u']
 dfw_resample = df_samp1['w']
 mw_resampled = df_samp1['Mw']
 
-#reading the output from SMSIM for 493 simulations
+#reading the output from SMSIM for 1000 simulations
 df_out = pd.read_csv("/Users/jaleenasunny/code_notebook/AM_Calibration/data/resampled_out.csv",sep=',',header=None)
 
 #reading the output from SMSIM using the initial parameters - from Bindi and Kotha (2020).
@@ -172,7 +172,7 @@ if __name__=='__main__':
         site_out = [boore+j for j in l10]
 
     #getting all AM values along with the site effects
-    for i in range (493):
+    for i in range (1000):
         l10 = [math.log10(j) for j in df_out.iloc[:,i]]
         for k in range(len(l10)):
             if vs30[k] == 0:
