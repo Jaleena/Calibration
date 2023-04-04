@@ -135,17 +135,17 @@ vs30 = df1['vs30']
 station = df1['stn']
 
 #reading the resampled csv file for the analysis
-df_samp1 = pd.read_csv("/Users/jaleenasunny/code_notebook/AM_Calibration/data/italy_resampled.csv",sep=',')
+df_samp1 = pd.read_csv("/Users/jaleenasunny/code_notebook/AM_Calibration/data/italy_resampled_full_it.csv",sep=',')
 Repi_resampled = df_samp1['Repi']
 dfu_resample = df_samp1['u']
 dfw_resample = df_samp1['w']
 mw_resampled = df_samp1['Mw']
 
 #reading the output from SMSIM for 1000 simulations
-df_out = pd.read_csv("/Users/jaleenasunny/code_notebook/AM_Calibration/data/resampled_out.csv",sep=',',header=None)
+df_out = pd.read_csv("/Users/jaleenasunny/code_notebook/AM_Calibration/data/outsim_rep.csv",sep=',',header=None)
 
 #reading the output from SMSIM using the initial parameters - from Bindi and Kotha (2020).
-df_originalout = pd.read_csv("/Users/jaleenasunny/code_notebook/AM_Calibration/data/italy_originalout_resam.csv",sep=',',header=None)
+df_originalout = pd.read_csv("/Users/jaleenasunny/code_notebook/AM_Calibration/data/esam_outsim.csv",sep=',',header=None)
 
 
 #getting the geometric mean and log 10 of pga values of the horizontal components
