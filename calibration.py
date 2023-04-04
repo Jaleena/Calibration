@@ -168,7 +168,7 @@ if __name__=='__main__':
             if vs30[k] == 0:
                 boore = 0
             else:
-                boore =  clin * math.log(min(vs30[k],1500)/760)
+                boore =  clin * math.log(min(vs30[k],1500)/760)* np.log10(2.71828)
         site_out = [boore+j for j in l10]
 
     #getting all AM values along with the site effects
@@ -178,7 +178,7 @@ if __name__=='__main__':
             if vs30[k] == 0:
                 boore = 0
             else:
-                boore =  clin *math.log(min(vs30[k],1500)/760)#/math.log(10)
+                boore =  clin *math.log(min(vs30[k],1500)/760) * np.log10(2.71828)
         l10_boore = [boore+j for j in l10]   
         a = am.areaMe(l10_boore,obspga_resam)
         area.append(a)
@@ -196,7 +196,7 @@ if __name__=='__main__':
         if vs30[k] == 0:
             boore = 0
         else:
-             boore =  clin *math.log(min(vs30[k],1500)/760)#/math.log(10)
+             boore =  clin *math.log(min(vs30[k],1500)/760)* np.log10(2.71828)
         optimum_log_boore = [boore+j for j in optimum_log]
         
 
